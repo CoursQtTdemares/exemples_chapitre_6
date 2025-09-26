@@ -85,7 +85,7 @@ select = [
     "PERF",
 
 ]
-ignore = ["N818", "PTH123", "TRY003"]
+ignore = ["N818", "PTH123", "TRY003", "T201"]
 
 fixable = ["ALL"]
 unfixable = []
