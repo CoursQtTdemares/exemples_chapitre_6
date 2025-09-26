@@ -6,6 +6,7 @@ from PyQt6.QtWidgets import QFileDialog, QMainWindow, QPushButton, QTableView, Q
 
 from src.api import WeatherResponse
 from src.model import WeatherModel
+from src.ui.widgets.chart import ExampleChart
 from src.weather_worker import WeatherWorker
 
 CITIES = ["Paris", "London", "Berlin", "Madrid", "Rome"]
@@ -70,8 +71,11 @@ class WeatherWindow(QMainWindow):
         self.view = QTableView()
         self.view.setModel(self.model)
 
+        chart = ExampleChart()
+
         vertical_layout.addWidget(self.download_button)
         vertical_layout.addWidget(self.view)
+        vertical_layout.addWidget(chart)
 
     def fetch_weather_data(self) -> None:
         for worker_id, city in enumerate(CITIES, start=1):
