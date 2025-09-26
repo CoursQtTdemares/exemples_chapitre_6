@@ -1,7 +1,18 @@
-def main() -> None:
+import sys
+
+from PyQt6.QtWidgets import QApplication
+
+from src.ui.views.mdi_window import MDIWindow
+
+
+def main() -> int:
     """Entry point for exemples_chapitre_6."""
-    ...
+    app = QApplication(sys.argv)
+    window = MDIWindow()
+    window.show()
+
+    return app.exec()
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
