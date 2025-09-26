@@ -1,0 +1,6 @@
+{
+    "title": "Fenêtre Météo",
+    "export_to_csv": "Exporter en CSV",
+    "load_from_csv": "Charger depuis CSV",
+    "quit": "Quitter"
+}

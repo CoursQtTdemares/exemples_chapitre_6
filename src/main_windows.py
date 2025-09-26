@@ -5,6 +5,7 @@ from PyQt6.QtGui import QAction
 from PyQt6.QtWidgets import QFileDialog, QMainWindow, QPushButton, QTableView, QVBoxLayout, QWidget
 
 from src.api import WeatherResponse
+from src.i18n import traduction
 from src.model import WeatherModel
 from src.ui.widgets.chart import ExampleChart
 from src.weather_worker import WeatherWorker
@@ -15,7 +16,8 @@ CITIES = ["Paris", "London", "Berlin", "Madrid", "Rome"]
 class WeatherWindow(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
-        self.setWindowTitle("Weather Window")
+
+        self.setWindowTitle(traduction.tr("title"))
         self.setGeometry(100, 100, 800, 600)
 
         self.model = WeatherModel()
@@ -27,13 +29,13 @@ class WeatherWindow(QMainWindow):
         self.setup_ui()
 
     def setup_actions(self) -> None:
-        self.save_action = QAction("Export to CSV", self)
+        self.save_action = QAction(traduction.tr("export_to_csv"), self)
         self.save_action.triggered.connect(self.export_to_csv)
 
-        self.load_action = QAction("Load from CSV", self)
+        self.load_action = QAction(traduction.tr("load_from_csv"), self)
         self.load_action.triggered.connect(self.load_from_csv)
 
-        self.quit_action = QAction("Quit", self)
+        self.quit_action = QAction(traduction.tr("quit"), self)
         self.quit_action.triggered.connect(self.close)
 
     def export_to_csv(self) -> None:

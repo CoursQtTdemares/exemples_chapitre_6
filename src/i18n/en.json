@@ -1,0 +1,6 @@
+{
+    "title": "Weather Window",
+    "export_to_csv": "Export to CSV",
+    "load_from_csv": "Load from CSV",
+    "quit": "Quit"
+}

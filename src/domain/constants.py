@@ -5,3 +5,5 @@ from pathlib import Path
 WORKSPACE_DIR = Path(__file__).parents[2].resolve()
 
 SRC_DIR = WORKSPACE_DIR / "src"
+
+LANGUAGE = "en"
